@@ -9,6 +9,14 @@
   "engines": {
     "node": "~0.4.12"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "node-static": "0.5.9",
+    "socket.io": "0.8.7",
+    "ntwitter": "0.2.9-2"
+  },
+  "devDependencies": {},
+  "subdomain": "tweetjunk",
+  "scripts": {
+    "start": "server.js"
+  }
 }

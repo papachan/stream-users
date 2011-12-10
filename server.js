@@ -1,11 +1,16 @@
 
+var static = require('node-static');
 
+var http = require('http');
 
-var HTTPServer = require('http-server').HTTPServer;
+var file = new (static.Server)('./content');
 
-var httpserver = new HTTPServer({
-	root: './content'
+var server = http.createServer(function(request, response){
+	request.addListener('end', function(){
+		file.serve(request, response);
+	});
 });
 
-io = require('socket.io').listen(httpserver)
-httpserver.start();
+server.listen(3000);
+
+io = require('socket.io').listen(server)

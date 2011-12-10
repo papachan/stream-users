@@ -12,13 +12,14 @@ var server = http.createServer(function(request, response){
 });
 
 var twit = new twitter(require('./keys'));
-    twit.verifyCredentials(function( error, data){
-	// console.log(data);
+twit.verifyCredentials(function( error, data){
+	 
 })
-.search('node.js',function(error, data){
-	console.log(data);
+.stream('statuses/filter', {'track':'php'},function(stream){
+     stream.on('data',function(data){
+        console.log('@' + data.user.screen_name + ':' + data.text);     
+     });
 });
-
  
 server.listen(3000);
 

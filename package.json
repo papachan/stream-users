@@ -1,0 +1,14 @@
+{
+  "author": "@papachan (www.androidda.com)",
+  "name": "stream-users",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/papachan/stream-users.git"
+  },
+  "engines": {
+    "node": "~0.4.12"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
